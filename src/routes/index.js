@@ -1,22 +1,15 @@
-const newsRouter = require('./news');
 const studentRouter = require('./student');
 const officerRouter = require('./officer');
 const teacherRouter = require('./teacher');
 const adminRouter = require('./admin');
 
 function route(app) {
-
-    app.use('/news', newsRouter);
-      
-    // app.get('/', (req, res) => {
-    //   res.render('home', {layout: 'mainStudent.hbs'});
-    // })
     var type_user = 3;
     
     if (type_user == 0)
     {
         app.use('/', adminRouter);
-    } 
+    }
     else if (type_user == 1)
     {
         app.use('/', officerRouter);
