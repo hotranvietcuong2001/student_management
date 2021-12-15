@@ -17,6 +17,18 @@ class AdminController {
         res.render('users/admin/home', {layout: 'admin.hbs'});
     }
 
+    createAccount (req, res) {
+        res.render('users/admin/create_account', {layout: 'admin.hbs'});
+    }
+
+    setRule (req, res) {
+        res.render('users/admin/set_rule', {layout: 'admin.hbs'});
+    }
+
+    update (req, res) {
+        res.render('users/admin/update_info', {layout: 'admin.hbs'});
+    }
+
 
 }
 

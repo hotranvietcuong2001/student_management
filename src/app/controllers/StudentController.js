@@ -17,6 +17,9 @@ class StudentController {
         res.render('users/student/home', {layout: 'student.hbs'});
     }
 
+    result (req, res) {
+        res.render('users/student/result', {layout: 'student.hbs'});
+    }
 
 }
 

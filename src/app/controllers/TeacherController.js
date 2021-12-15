@@ -17,6 +17,13 @@ class TeacherController {
         res.render('users/teacher/home', {layout: 'teacher.hbs'});
     }
 
+    inputScore (req, res) {
+        res.render('users/teacher/input_score', {layout: 'teacher.hbs'});
+    }
+
+    report (req, res) {
+        res.render('users/teacher/report', {layout: 'teacher.hbs'});
+    }
 
 }
 

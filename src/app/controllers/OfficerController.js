@@ -21,6 +21,9 @@ class OfficerController {
         res.render('users/officer/update_info', {layout: 'officer.hbs'});
     }
 
+    report (req, res) {
+        res.render('users/officer/report', {layout: 'officer.hbs'});
+    }
 
 }
 
