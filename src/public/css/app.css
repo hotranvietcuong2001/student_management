@@ -1,21 +1,17 @@
-@import "variables";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
 * {
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
   padding: 0;
-  margin: 0;
-}
+  margin: 0; }
 
 h1 {
   text-align: center;
   margin: 2rem 0;
   text-decoration: underline;
   font-weight: bold;
-  font-size: 3rem;
-}
+  font-size: 3rem; }
 
-//Info-form Start
 .info-container {
   background-color: white;
   align-content: center;
@@ -23,56 +19,44 @@ h1 {
   margin-left: 20%;
   margin-right: 20%;
   border-radius: 50px;
-  border: 3px solid black;
-  .role-text {
+  border: 3px solid black; }
+  .info-container .role-text {
     text-decoration: none;
     text-align: left;
     margin-top: 2rem;
     margin-left: 5rem;
     font-weight: 1000;
-    font-size: 2.25rem;
-  }
-
-  .info-form {
+    font-size: 2.25rem; }
+  .info-container .info-form {
     display: flex;
     justify-content: space-between;
     align-content: center;
     padding: 1.5rem 2rem;
-    margin: 0 2rem;
-    .info {
-      margin: 0 0;
-      .text {
+    margin: 0 2rem; }
+    .info-container .info-form .info {
+      margin: 0 0; }
+      .info-container .info-form .info .text {
         font-size: 1.75rem;
-        font-weight: bolder;
-      }
-      span {
+        font-weight: bolder; }
+      .info-container .info-form .info span {
         font-size: 1.25rem;
-        font-weight: 450;
-      }
-      input {
+        font-weight: 450; }
+      .info-container .info-form .info input {
         width: 100%;
         font-size: 1rem;
         padding: 1rem 4rem;
         margin: 0.5rem 0;
         border: 1.5px solid #ccc;
         box-sizing: border-box;
-        text-align: justify;
-      }
-    }
-
-    .avatar-img {
+        text-align: justify; }
+    .info-container .info-form .avatar-img {
       margin-left: auto;
       margin-top: 2rem;
       margin-bottom: 2rem;
       max-width: 300px;
       max-height: 400px;
-      height: fit-content;
-    }
-  }
-}
-//Info-form End
+      height: fit-content; }
 
-//Create-form Start
 .create-container {
   background-color: white;
   align-content: center;
@@ -80,65 +64,54 @@ h1 {
   margin-left: 30%;
   margin-right: 30%;
   border-radius: 50px;
-  border: 3px solid black;
-  .role-text {
+  border: 3px solid black; }
+  .create-container .role-text {
     text-decoration: none;
     text-align: left;
     margin-top: 2rem;
     margin-left: 5rem;
     font-weight: 1000;
-    font-size: 2.25rem;
-  }
-
-  .create-form {
+    font-size: 2.25rem; }
+  .create-container .create-form {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
     padding: 1.5rem 2rem;
-    margin: 0 2rem;
-    .info {
+    margin: 0 2rem; }
+    .create-container .create-form .info {
       margin: 0 0;
       align-content: center;
-      align-items: center;
-      span {
+      align-items: center; }
+      .create-container .create-form .info span {
         font-size: 1.25rem;
-        font-weight: 450;
-      }
-      input {
+        font-weight: 450; }
+      .create-container .create-form .info input {
         width: 100%;
         font-size: 1rem;
         padding: 0.6rem 4rem;
         margin: 0.5rem 0;
         border: 1.5px solid #ccc;
         box-sizing: border-box;
-        text-align: justify;
-      }
-    }
-  }
-}
+        text-align: justify; }
 
 .btn-add {
   margin: 0.5rem 0;
   position: absolute;
   left: 45%;
   -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  button {
+  transform: translateY(-50%); }
+  .btn-add button {
     padding: 0.75rem 3rem;
     color: black;
     background-color: white;
     border: 2px solid black;
-    border-radius: 10px;
-  }
-  button:hover {
-    background-color: rgb(229, 226, 226);
-  }
-}
-//Update-form End
+    border-radius: 10px; }
+  .btn-add button:hover {
+    background-color: #e5e2e2; }
+
 div {
-  display: block;
-}
+  display: block; }
 
 li,
 a,
@@ -147,10 +120,8 @@ button {
   font-weight: 700;
   font-size: 1.25rem;
   color: white;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-//Nav-start
 nav {
   display: flex;
   justify-content: space-between;
@@ -158,41 +129,30 @@ nav {
   align-items: center;
   height: 60px;
   box-shadow: 2px 2px 12px rgba(124, 115, 115, 0.4);
-  padding: 0px 2%;
-  .navbar {
+  padding: 0px 2%; }
+  nav .navbar {
     margin: 0;
     display: flex;
-    list-style: none;
-    li {
+    list-style: none; }
+    nav .navbar li {
       display: inline-block;
-      padding: 0px 25px;
-      a {
-        transition: all 0.3s ease 0s;
-      }
-      a:hover {
-        color: #d1d1d173;
-      }
-      .subnav {
+      padding: 0px 25px; }
+      nav .navbar li a {
+        transition: all 0.3s ease 0s; }
+      nav .navbar li a:hover {
+        color: #d1d1d173; }
+      nav .navbar li .subnav {
         display: none;
         position: absolute;
         background-color: black;
-        min-width: 100px;
-        li {
+        min-width: 100px; }
+        nav .navbar li .subnav li {
           color: black;
           padding: 12px 16px;
           text-decoration: none;
           display: block;
-          text-align: left;
-        }
-        li:hover {
-          background-color: gray;
-        }
-      }
-    }
-    .nav-items:hover .subnav {
-      display: block;
-    }
-  }
-}
-
-//Nav-end
+          text-align: left; }
+        nav .navbar li .subnav li:hover {
+          background-color: gray; }
+    nav .navbar .nav-items:hover .subnav {
+      display: block; }
