@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const { multipleMongooseToObject } = require('../../util/mongoose')
+const { multipleMongooseToObject, mongooseToObject } = require('../../util/mongoose')
 
 class OfficerController {
 
@@ -38,6 +38,19 @@ class OfficerController {
 
     report (req, res) {
         res.render('users/officer/report', {layout: 'officer.hbs'});
+    }
+
+    edit (req, res, next) {
+        User.findById(req.params.id)
+            .then(user => res.render('users/officer/edit', {layout: 'officer.hbs', user: mongooseToObject(user)}))
+            .catch(next);
+    }
+
+
+    saveUpdates (req, res, next) {
+        User.updateOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('/update_info'))
+            .catch(next);
     }
 
 }

@@ -7,7 +7,7 @@ const { extname } = require('path');
 const route = require('./routes');
 const db = require('./config/db');
 
-// Conect to DB
+// Connect to DB
 db.connect();
 
 const app = express();
