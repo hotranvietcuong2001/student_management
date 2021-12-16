@@ -1,21 +1,23 @@
- <div class = "container" id ="container">
+ <form class = "container" id ="container" method="POST" action="/store">
     <h1> ADD ACCOUNT</h1>
 
     <div class="info-container">
         <div class="info-form">
             <div class="info">
-                <span>Name</span> </br>
-                <input class="username" type="text" placeholder="Full Name" name="uname"> <br/>
-                <span>D.O.B</span> </br>
-                <input class="dob" type="text" placeholder="Date of birth" name="dob"> </br>
-                <span>Gender</span> </br>
-                <input class="gender" type="text" placeholder="Gender" name="gender"> </br>
-                <span>Class</span> </br>
-                <input class="class" type="text" placeholder="Class" name="class"> </br>
-                <span>Role</span> </br>
-                <input class="role" type="text" placeholder="Role" name="role" required> </br>
-                <span>Password</span> </br>
-                <input class="password" type="text" placeholder="Password" name="pwd" required> </br>
+                <label for="username">Username</label> <br/>
+                <input class="text" type="text" placeholder="Username" name="username" required> <br/>
+                <label for="name">Full Name<label> <br/>
+                <input class="text" type="text" placeholder="Full Name" name="name"> <br/>
+                <label for="dob">D.O.B<label> <br/>
+                <input class="text" type="text" placeholder="Date of birth" name="dob"> </br>
+                <label for="gender">Gender</label> <br/>
+                <input class="text" type="text" placeholder="Gender" name="gender"> </br>
+                <label for="class">Class</label> <br/>
+                <input class="text" type="text" placeholder="Class" name="class"> </br>
+                <label for="role">Role</label> <br/>
+                <input class="text" type="text" placeholder="Role" name="role" required> </br>
+                <label for="password">Paswword</label> <br/>
+                <input class="text" type="text" placeholder="Password" name="password" required> </br>
             </div>
             
         </div>

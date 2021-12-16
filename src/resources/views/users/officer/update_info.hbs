@@ -2,8 +2,8 @@
     <thead>
         <tr>
             <th scope="col">#</th>
-            <th scope="col">ID</th>
-            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Full Name</th>
             <th scope="col">DOB</th>
             <th scope="col">Gender</th>
             <th scope="col">Class</th>
@@ -14,7 +14,7 @@
         {{#each users}}
         <tr>
             <th scope="row"></th>
-            <td>{{this._id}}</td>
+            <td>{{this.username}}</td>
             <td>{{this.name}}</td>
             <td>{{this.dob}}</td>
             <td>{{this.gender}}</td>

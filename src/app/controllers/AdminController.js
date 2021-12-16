@@ -21,6 +21,13 @@ class AdminController {
         res.render('users/admin/create_account', {layout: 'admin.hbs'});
     }
 
+    store(req, res, next) {
+        const user = new User(req.body);
+        user.save()
+            .then(() => res.redirect('/create_account'))
+            .catch(err => {});
+    }
+
     setRule (req, res) {
         res.render('users/admin/set_rule', {layout: 'admin.hbs'});
     }

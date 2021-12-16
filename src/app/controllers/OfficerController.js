@@ -21,8 +21,19 @@ class OfficerController {
         res.render('users/officer/create_account', {layout: 'officer.hbs'});
     }
 
-    updateInfo (req, res) {
-        res.render('users/officer/update_info', {layout: 'officer.hbs'});
+    store(req, res, next) {
+        const user = new User(req.body);
+        user.save()
+            .then(() => res.redirect('/create_account'))
+            .catch(err => {});
+    }
+
+    updateInfo (req, res, next) {
+        User.find({})
+        .then(users => {
+            res.render('users/officer/update_info', {layout: 'officer.hbs', users: multipleMongooseToObject(users)});
+        })
+        .catch(next);
     }
 
     report (req, res) {
