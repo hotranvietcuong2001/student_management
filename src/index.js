@@ -1,5 +1,6 @@
 const path = require('path');
 const express = require('express');
+var methodOverride = require('method-override')
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const { extname } = require('path');
@@ -16,6 +17,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(morgan('combined'));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'))
 
 app.engine('hbs', handlebars({extname: ".hbs"}));
 

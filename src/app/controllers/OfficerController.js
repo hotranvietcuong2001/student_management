@@ -1,4 +1,4 @@
-const Course = require('../models/Course');
+const User = require('../models/User');
 const { multipleMongooseToObject } = require('../../util/mongoose')
 
 class OfficerController {
@@ -14,7 +14,11 @@ class OfficerController {
     // }
 
     info (req, res) {
-        res.render('users/officer/home', {layout: 'officer.hbs'});
+        res.render('users/home', {layout: 'officer.hbs'});
+    }
+
+    createAccount(req, res){
+        res.render('users/officer/create_account', {layout: 'officer.hbs'});
     }
 
     updateInfo (req, res) {

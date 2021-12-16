@@ -1,4 +1,4 @@
-const Course = require('../models/Course');
+const User = require('../models/User');
 const { multipleMongooseToObject } = require('../../util/mongoose')
 
 class AdminController {
@@ -14,7 +14,7 @@ class AdminController {
     // }
 
     info (req, res) {
-        res.render('users/admin/home', {layout: 'admin.hbs'});
+        res.render('users/home', {layout: 'admin.hbs'});
     }
 
     createAccount (req, res) {
@@ -25,8 +25,17 @@ class AdminController {
         res.render('users/admin/set_rule', {layout: 'admin.hbs'});
     }
 
-    update (req, res) {
-        res.render('users/admin/update_info', {layout: 'admin.hbs'});
+    update (req, res, next) {
+
+        User.find({})
+            .then(users => {
+                res.render('users/admin/update_info', {layout: 'admin.hbs', users: multipleMongooseToObject(users)});
+            })
+            .catch(next);
+        
+        // User.find({})
+        //     .then(users => res.json(users))
+        //     .catch(next);
     }
 
 

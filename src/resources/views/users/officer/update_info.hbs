@@ -1,29 +1,30 @@
- <div class = "container" id ="container">
-    <h1> ADD STUDENT</h1>
-
-    <div class="info-container">
-        <div class="info-form">
-            <div class="info">
-                <span>Student ID</span> </br>
-                <input class="ID" type="text" placeholder="" name="uname" required> </br>
-                <span>Name</span> </br>
-                <input class="username" type="text" placeholder="Full Name" name="uname" required> <br/>
-                <span>D.O.B</span> </br>
-                <input class="DOB" type="text" placeholder="Date of birth" name="uname" required> </br>
-                <span>Grade</span> </br>
-                <input class="Grade" type="text" placeholder="Grade" name="uname" required> </br>
-                <span>Telephone</span> </br>
-                <input class="Tele" type="text" placeholder="Telephone" name="uname" required> </br>
-            </div>
-            
-            <div class="image-container">
-                <img class = "avatar-img" id="avatar-img" src="./../assets/img/avatar.png" alt = "Day la anh">
-                <button class="button-upload" id = "button-upload">Upload</button>
-            </div>
-        </div>
-        
-    </div>
-    <div class="btn-add"> 
-        <button id= "btn-add">Add</button>
-    </div>
-</div>    
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Class</th>
+            <th scope="col">Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each users}}
+        <tr>
+            <th scope="row"></th>
+            <td>{{this._id}}</td>
+            <td>{{this.name}}</td>
+            <td>{{this.dob}}</td>
+            <td>{{this.gender}}</td>
+            <td>{{this.class}}</td>
+            <td>{{this.role}}</td>
+            <td>
+                <a href="" s="btn btn-link">Edit</a>
+                <a href="" class="btn btn-link">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
