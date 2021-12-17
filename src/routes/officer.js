@@ -8,6 +8,8 @@ router.get('/update_info', officerController.updateInfo);
 router.get('/create_account', officerController.createAccount);
 router.post('/store', officerController.store);
 router.get('/report', officerController.report);
+router.get('/:id/edit', officerController.edit);
+router.put('/:id', officerController.saveUpdates);
 router.get('/', officerController.info);
 
 

@@ -1,0 +1,29 @@
+ <form class = "container" id ="container" method="POST" action="/{{user._id}}?_method=PUT">
+    <h1> EDIT ACCOUNT</h1>
+
+    <div class="info-container">
+        <div class="info-form">
+            <div class="info">
+                <label for="username">Username</label> <br/>
+                <input class="text" type="text" value="{{user.username}}" name="username" required> <br/>
+                <label for="name">Full Name<label> <br/>
+                <input class="text" type="text" value="{{user.name}}" name="name"> <br/>
+                <label for="dob">D.O.B<label> <br/>
+                <input class="text" type="text" value="{{user.dob}}" name="dob"> </br>
+                <label for="gender">Gender</label> <br/>
+                <input class="text" type="text" value="{{user.gender}}" name="gender"> </br>
+                <label for="class">Class</label> <br/>
+                <input class="text" type="text" value="{{user.class}}" name="class"> </br>
+                <label for="role">Role</label> <br/>
+                <input class="text" type="text" value="{{user.role}}" name="role" required> </br>
+                <label for="password">Password</label> <br/>
+                <input class="text" type="text" value="{{user.password}}" name="password" required> </br>
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="btn-add"> 
+        <button id= "btn-add">Add</button>
+    </div>
+</div>
