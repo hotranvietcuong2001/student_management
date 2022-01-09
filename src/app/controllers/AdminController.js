@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const { multipleMongooseToObject } = require('../../util/mongoose')
+const { multipleMongooseToObject, mongooseToObject } = require('../../util/mongoose')
 
 class AdminController {
 
@@ -32,17 +32,27 @@ class AdminController {
         res.render('users/admin/set_rule', {layout: 'admin.hbs'});
     }
 
-    update (req, res, next) {
+    updateInfo (req, res, next) {
 
         User.find({})
             .then(users => {
                 res.render('users/admin/update_info', {layout: 'admin.hbs', users: multipleMongooseToObject(users)});
             })
             .catch(next);
-        
-        // User.find({})
-        //     .then(users => res.json(users))
-        //     .catch(next);
+
+    }
+
+    edit (req, res, next) {
+        User.findById(req.params.id)
+            .then(user => res.render('users/admin/edit', {layout: 'admin.hbs', user: mongooseToObject(user)}))
+            .catch(next);
+    }
+
+
+    saveUpdates (req, res, next) {
+        User.updateOne({_id: req.params.id}, req.body)
+            .then(() => res.redirect('/update_info'))
+            .catch(next);
     }
 
 
