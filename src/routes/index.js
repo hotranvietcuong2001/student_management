@@ -4,7 +4,7 @@ const teacherRouter = require('./teacher');
 const adminRouter = require('./admin');
 
 function route(app) {
-    var type_user =0;
+    var type_user =1;
     
     if (type_user == 0)
     {
