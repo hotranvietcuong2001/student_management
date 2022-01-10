@@ -2,17 +2,6 @@ const User = require('../models/User');
 const { multipleMongooseToObject, mongooseToObject } = require('../../util/mongoose')
 
 class OfficerController {
-
-    // [GET] /news
-    // index(req, res, next) {
-    //     // res.render('news');
-    //     Course.find({})
-    //         .then(courses => {
-    //             res.render('news', {courses: multipleMongooseToObject(courses)});
-    //         })
-    //         .catch(next);
-    // }
-
     info (req, res) {
         res.render('users/home', {layout: 'officer.hbs'});
     }
@@ -53,6 +42,11 @@ class OfficerController {
             .catch(next);
     }
 
+    delete(req, res, next) {
+        User.deleteOne({_id: req.params.id})
+            .then(() => res.redirect('/update_info'))
+            .catch(next);
+    }
 }
 
 module.exports = new OfficerController;

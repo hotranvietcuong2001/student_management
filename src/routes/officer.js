@@ -10,6 +10,7 @@ router.post('/store', officerController.store);
 router.get('/report', officerController.report);
 router.get('/:id/edit', officerController.edit);
 router.put('/:id', officerController.saveUpdates);
+router.delete('/:id', officerController.delete);
 router.get('/', officerController.info);
 
 
