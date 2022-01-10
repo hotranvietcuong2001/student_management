@@ -18,7 +18,7 @@ class OfficerController {
     }
 
     updateInfo (req, res, next) {
-        User.find({})
+        User.find({ role: ['student', 'teacher'] })
         .then(users => {
             res.render('users/officer/update_info', {layout: 'officer.hbs', users: multipleMongooseToObject(users)});
         })
