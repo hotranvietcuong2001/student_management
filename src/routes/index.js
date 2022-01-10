@@ -3,6 +3,7 @@ const officerRouter = require('./officer');
 const teacherRouter = require('./teacher');
 const adminRouter = require('./admin');
 const loginRouter = require('./login');
+// const authRouter = require('./../../auth/authRouter');
 
 function route(app) {
     
