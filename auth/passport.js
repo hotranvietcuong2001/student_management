@@ -10,7 +10,7 @@ passport.use(new LocalStrategy(
       if (!user) {
         return done(null, false, { message: 'Incorrect username.' });
       }
-      if (validPassword(user, password)) {
+      if (!validPassword(user, password)) {
         return done(null, false, { message: 'Incorrect password.' });
       }
     //   if (!user.validPassword(password)) {
