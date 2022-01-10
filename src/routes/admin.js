@@ -2,8 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-const adminController = require('../app/controllers/adminController');
-
+const adminController = require('../app/controllers/AdminController');
 
 router.get('/create_account', adminController.createAccount);
 router.post('/store', adminController.store);

@@ -6,11 +6,12 @@ const loginRouter = require('./login');
 
 function route(app) {
     
-    app.use('/login',loginRouter);
-
+    app.use('/',loginRouter);
+    
     // var type_user = 0;
     // if (type_user == 0)
     // {
+        
     //     app.use('/', adminRouter);
     // }
     // else if (type_user == 1)
