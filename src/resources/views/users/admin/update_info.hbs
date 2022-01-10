@@ -25,7 +25,7 @@
             <td>{{this.class}}</td>
             <td>{{this.role}}</td>
             <td><a href="./{{this._id}}/edit" class="btn btn-link" >Edit</a></td>
-            <td><a href="" class="btn btn-link" data-toggle="modal" data-target="#deleteModal">Delete</a></td>
+            <td><a href="" class="btn btn-link" data-toggle="modal"  data-id="{{this._id}}"data-target="#delete-modal">Delete</a></td>
         </tr>
         {{/each}}
     </tbody>
@@ -34,7 +34,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -48,8 +48,32 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary">Delete</button>
+        <button id="btn-delete" type="button" class="btn btn-primary">Delete</button>
       </div>
     </div>
   </div>
 </div>
+
+<form name="delete-form" method="POST">
+
+</form>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var userId;
+    var deleteForm = document.forms['delete-form'];
+    $('#delete-modal').on('show.bs.modal', function (event) {
+
+      var button = $(event.relatedTarget);
+      userId = button.data('id');
+      });
+    
+          
+    var btnDelete = document.getElementById('btn-delete');
+    btnDelete.onclick = function() {
+      deleteForm.action = userId + '?_method=DELETE';
+      deleteForm.submit();
+    }
+  })
+</script>

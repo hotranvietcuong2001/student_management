@@ -56,6 +56,13 @@ class AdminController {
     }
 
 
+    delete(req, res, next) {
+        User.deleteOne({_id: req.params.id})
+            .then(() => res.redirect('/update_info'))
+            .catch(next);
+    }
+
+
 }
 
 module.exports = new AdminController;
