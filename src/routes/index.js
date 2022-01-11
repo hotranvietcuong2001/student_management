@@ -12,30 +12,30 @@ function test(req, res, next, role) {
   console.log(user);
   if (user.role === role) 
     next();
-  else
+  else 
     res.json({ error: "404 Page not found" })
 }
 
 function route(app) {
   app.use("/", loginRouter);
 
-  app.use(
-    "/",
-    (req, res, next) => {
-      test(req, res, next, "officer");
-    },
-    officerRouter
-  );
+//   app.use(
+//     "/",
+//     (req, res, next) => {
+//       test(req, res, next, "officer");
+//     },
+//     officerRouter
+//   );
   
 
   app.use(
-    "/:admin",authUser,
+    "/:admin", authUser,
     (req, res, next) => {
       test(req, res, next, "admin");
     },
     adminRouter
   );
-
+  
   app.use(
     "/:officer",authUser,
     (req, res, next) => {
