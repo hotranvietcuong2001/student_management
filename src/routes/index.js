@@ -3,6 +3,7 @@ const officerRouter = require("./officer");
 const teacherRouter = require("./teacher");
 const adminRouter = require("./admin");
 const loginRouter = require("./login");
+const {authUser} = require("./basicAuth")
 // const authRouter = require('./../../auth/authRouter');
 
 function test(req, res, next, role) {
@@ -11,7 +12,7 @@ function test(req, res, next, role) {
   console.log(user);
   if (user.role === role) 
     next();
-  else res.json({ error: "404 page not found" });
+  else res.json({ error: "404 Page not found" });
 }
 
 function route(app) {
@@ -27,28 +28,28 @@ function route(app) {
   
 
   app.use(
-    "/:admin",
+    "/:admin",authUser,
     (req, res, next) => {
       test(req, res, next, "admin");
     },
     adminRouter
   );
   app.use(
-    "/:officer",
+    "/:officer",authUser,
     (req, res, next) => {
       test(req, res, next, "officer");
     },
     officerRouter
   );
   app.use(
-    "/:teacher",
+    "/:teacher",authUser,
     (req, res, next) => {
       test(req, res, next, "teacher");
     },
     teacherRouter
   );
   app.use(
-    "/:student",
+    "/:student",authUser,
     (req, res, next) => {
       test(req, res, next, "student");
     },
