@@ -1,6 +1,6 @@
 
 
-<form class = "container" id ="container" method="POST" action="/{{user._id}}?_method=PUT">
+<form class = "container" id ="container" method="POST" action="/:admin/{{user._id}}?_method=PUT">
     <h1> EDIT ACCOUNT</h1>
 
     <div class="info-container">
@@ -35,6 +35,8 @@
     </div>
 </div>
 
+
+{{!-- Set default role to edit --}}
 <script>
     var temp = "{{user.role}}";
     var mySelect = document.getElementById('option-role');

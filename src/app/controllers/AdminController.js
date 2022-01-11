@@ -40,14 +40,14 @@ class AdminController {
 
     saveUpdates (req, res, next) {
         User.updateOne({_id: req.params.id}, req.body)
-            .then(() => res.redirect('/update_info'))
+            .then(() => res.redirect('/:admin/update_info'))
             .catch(next);
     }
 
 
     delete(req, res, next) {
         User.deleteOne({_id: req.params.id})
-            .then(() => res.redirect('/update_info'))
+            .then(() => res.redirect('/:admin/update_info'))
             .catch(next);
     }
 

@@ -12,7 +12,8 @@ function test(req, res, next, role) {
   console.log(user);
   if (user.role === role) 
     next();
-  else res.json({ error: "404 Page not found" });
+  else
+    res.json({ error: "404 Page not found" })
 }
 
 function route(app) {
@@ -41,6 +42,7 @@ function route(app) {
     },
     officerRouter
   );
+  
   app.use(
     "/:teacher",authUser,
     (req, res, next) => {
@@ -55,6 +57,8 @@ function route(app) {
     },
     studentRouter
   );
+
+  // res.json({ error: "404 Page not found" });
 
 
   // var type_user = 0;
