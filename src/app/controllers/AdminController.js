@@ -13,7 +13,7 @@ class AdminController {
     store(req, res, next) {
         const user = new User(req.body);
         user.save()
-            .then(() => res.redirect('/:admin/create_account'))
+            .then(() => res.redirect('/admin/create_account'))
             .catch(err => {});
     }
 
@@ -40,14 +40,14 @@ class AdminController {
 
     saveUpdates (req, res, next) {
         User.updateOne({_id: req.params.id}, req.body)
-            .then(() => res.redirect('/:admin/update_info'))
+            .then(() => res.redirect('/admin/update_info'))
             .catch(next);
     }
 
 
     delete(req, res, next) {
         User.deleteOne({_id: req.params.id})
-            .then(() => res.redirect('/:admin/update_info'))
+            .then(() => res.redirect('/admin/update_info'))
             .catch(next);
     }
 

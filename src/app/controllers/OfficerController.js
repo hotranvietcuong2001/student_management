@@ -13,7 +13,7 @@ class OfficerController {
     store(req, res, next) {
         const user = new User(req.body);
         user.save()
-            .then(() => res.redirect('/:officer/create_account'))
+            .then(() => res.redirect('/officer/create_account'))
             .catch(err => {});
     }
 
@@ -38,13 +38,13 @@ class OfficerController {
 
     saveUpdates (req, res, next) {
         User.updateOne({_id: req.params.id}, req.body)
-            .then(() => res.redirect('/:admin/update_info'))
+            .then(() => res.redirect('/officer/update_info'))
             .catch(next);
     }
 
     delete(req, res, next) {
         User.deleteOne({_id: req.params.id})
-            .then(() => res.redirect('/:admin/update_info'))
+            .then(() => res.redirect('/officer/update_info'))
             .catch(next);
     }
 }

@@ -12,21 +12,23 @@ class LoginController {
             res.redirect('/login')
         
     }
+
     authLogin(req,res){
         if(req.user){
             // isLogin = true;   
             // res.redirect('/:admin');
+            console.log(req.user.role);
             if(req.user.role === 'admin'){
-                res.redirect('/:admin');
+                res.redirect('/admin');
             }
             else if(req.user.role === 'officer'){
-                res.redirect('/:officer');
+                res.redirect('/officer');
             }
             else if(req.user.role === 'teacher'){
-                res.redirect('/:teacher');
+                res.redirect('/teacher');
             }
             else if(req.user.role === 'student'){
-                res.redirect('/:student');
+                res.redirect('/student');
             }    
         }
         else {

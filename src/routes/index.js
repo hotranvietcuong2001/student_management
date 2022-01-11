@@ -29,15 +29,15 @@ function route(app) {
   
 
   app.use(
-    "/:admin", authUser,
+    '/admin',
     (req, res, next) => {
       test(req, res, next, "admin");
     },
     adminRouter
   );
-  
+
   app.use(
-    "/:officer",authUser,
+    "/officer",authUser,
     (req, res, next) => {
       test(req, res, next, "officer");
     },
@@ -45,14 +45,14 @@ function route(app) {
   );
   
   app.use(
-    "/:teacher",authUser,
+    "/teacher",authUser,
     (req, res, next) => {
       test(req, res, next, "teacher");
     },
     teacherRouter
   );
   app.use(
-    "/:student",authUser,
+    "/student",authUser,
     (req, res, next) => {
       test(req, res, next, "student");
     },
