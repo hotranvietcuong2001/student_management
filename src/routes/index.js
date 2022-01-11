@@ -19,13 +19,13 @@ function test(req, res, next, role) {
 function route(app) {
   app.use("/", loginRouter);
 
-//   app.use(
-//     "/",
-//     (req, res, next) => {
-//       test(req, res, next, "officer");
-//     },
-//     officerRouter
-//   );
+  app.use(
+    "/",
+    (req, res, next) => {
+      test(req, res, next, "officer");
+    },
+    officerRouter
+  );
   
 
   app.use(
@@ -35,6 +35,7 @@ function route(app) {
     },
     adminRouter
   );
+
   app.use(
     "/:officer",authUser,
     (req, res, next) => {
