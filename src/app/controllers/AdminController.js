@@ -13,7 +13,7 @@ class AdminController {
     store(req, res, next) {
         const user = new User(req.body);
         user.save()
-            .then(() => res.redirect('/create_account'))
+            .then(() => res.redirect('/:admin/create_account'))
             .catch(err => {});
     }
 

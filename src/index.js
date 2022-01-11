@@ -6,7 +6,8 @@ const handlebars = require('express-handlebars');
 const { extname } = require('path');
 const route = require('./routes');
 const db = require('./config/db');
-
+const session = require("express-session");
+const passport = require('./../auth/passport')
 // Conect to DB
 db.connect();
 
@@ -26,6 +27,10 @@ app.engine('hbs', handlebars({extname: ".hbs"}));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources', 'views',));
 
+// app.use(express.static("public"));
+app.use(session({ secret: "cats" }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 route(app);
 
